@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CropInfoService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Crop_yield_prediction</a> &gt; <a href="index.source.html" class="el_package">service</a> &gt; <span class="el_source">CropInfoService.java</span></div><h1>CropInfoService.java</h1><pre class="source lang-java linenums">package service;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import model.CropDetail;
+import model.CropRecommendation;
+
+<span class="fc" id="L10">public class CropInfoService {</span>
+<span class="fc" id="L11">    private static final List&lt;CropDetail&gt; CROPS = buildCrops();</span>
+
+    private static List&lt;CropDetail&gt; buildCrops() {
+<span class="fc" id="L14">        List&lt;CropDetail&gt; list = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L15">        list.add(new CropDetail(&quot;Wheat&quot;, &quot;bi-flower1&quot;, &quot;https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&quot;, &quot;Urea, DAP, Potash&quot;, &quot;Prevent rust disease&quot;, &quot;450-650 mm&quot;, &quot;120-150 Days&quot;, 15, 25, 40, 70, 50, 6.0, 7.5));</span>
+<span class="fc" id="L16">        list.add(new CropDetail(&quot;Rice&quot;, &quot;bi-droplet&quot;, &quot;https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400&quot;, &quot;NPK, Zinc&quot;, &quot;Control blast&quot;, &quot;1000-1500 mm&quot;, &quot;110-140 Days&quot;, 25, 35, 70, 90, 150, 5.5, 6.5));</span>
+<span class="fc" id="L17">        list.add(new CropDetail(&quot;Maize&quot;, &quot;bi-tree&quot;, &quot;https://images.unsplash.com/photo-1551752496-b0970c0a0c0e?w=400&quot;, &quot;Urea, DAP&quot;, &quot;Stem borer control&quot;, &quot;500-800 mm&quot;, &quot;90-110 Days&quot;, 20, 30, 50, 75, 60, 5.8, 7.0));</span>
+<span class="fc" id="L18">        list.add(new CropDetail(&quot;Cotton&quot;, &quot;bi-circle-half&quot;, &quot;https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&quot;, &quot;Nitrogen, Phosphorus&quot;, &quot;Bollworm control&quot;, &quot;600-900 mm&quot;, &quot;150-180 Days&quot;, 25, 35, 50, 70, 50, 6.0, 8.0));</span>
+<span class="fc" id="L19">        list.add(new CropDetail(&quot;Sugarcane&quot;, &quot;bi-water&quot;, &quot;https://images.unsplash.com/photo-1587735243615-c03a25a1e5c2?w=400&quot;, &quot;NPK, Manure&quot;, &quot;Red rot control&quot;, &quot;1500-2500 mm&quot;, &quot;10-12 Months&quot;, 26, 32, 65, 85, 100, 6.0, 7.5));</span>
+<span class="fc" id="L20">        list.add(new CropDetail(&quot;Barley&quot;, &quot;bi-grain&quot;, &quot;https://images.unsplash.com/photo-1516684669130-eeeec3ee3a0e?w=400&quot;, &quot;Nitrogen&quot;, &quot;Powdery mildew&quot;, &quot;400-500 mm&quot;, &quot;100-120 Days&quot;, 12, 22, 40, 65, 40, 6.0, 8.0));</span>
+<span class="fc" id="L21">        list.add(new CropDetail(&quot;Millet&quot;, &quot;bi-sun&quot;, &quot;https://images.unsplash.com/photo-1601493700631-2b16ec8b4714?w=400&quot;, &quot;Urea&quot;, &quot;Downy mildew&quot;, &quot;400-600 mm&quot;, &quot;70-90 Days&quot;, 25, 35, 40, 60, 40, 5.5, 7.0));</span>
+<span class="fc" id="L22">        list.add(new CropDetail(&quot;Soybean&quot;, &quot;bi-egg&quot;, &quot;https://images.unsplash.com/photo-1593111775530-7b95a3b3e3a5?w=400&quot;, &quot;Rhizobium&quot;, &quot;Rust control&quot;, &quot;600-800 mm&quot;, &quot;90-120 Days&quot;, 20, 30, 60, 80, 60, 6.0, 7.0));</span>
+<span class="fc" id="L23">        list.add(new CropDetail(&quot;Potato&quot;, &quot;bi-circle&quot;, &quot;https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400&quot;, &quot;NPK&quot;, &quot;Late blight&quot;, &quot;500-700 mm&quot;, &quot;90-120 Days&quot;, 15, 25, 60, 80, 50, 5.0, 6.5));</span>
+<span class="fc" id="L24">        list.add(new CropDetail(&quot;Tomato&quot;, &quot;bi-apple&quot;, &quot;https://images.unsplash.com/photo-1546094096-0df4bcaaa337?w=400&quot;, &quot;NPK&quot;, &quot;Early blight&quot;, &quot;400-600 mm&quot;, &quot;70-90 Days&quot;, 18, 28, 55, 75, 50, 6.0, 7.0));</span>
+<span class="fc" id="L25">        list.add(new CropDetail(&quot;Onion&quot;, &quot;bi-layers&quot;, &quot;https://images.unsplash.com/photo-1518977956812-cd3dbadaef31?w=400&quot;, &quot;NPK, Sulphur&quot;, &quot;Purple blotch&quot;, &quot;350-550 mm&quot;, &quot;90-120 Days&quot;, 13, 25, 50, 70, 40, 6.0, 7.0));</span>
+<span class="fc" id="L26">        list.add(new CropDetail(&quot;Chilli&quot;, &quot;bi-fire&quot;, &quot;https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=400&quot;, &quot;NPK&quot;, &quot;Anthracnose&quot;, &quot;600-800 mm&quot;, &quot;120-150 Days&quot;, 20, 30, 50, 70, 60, 6.0, 7.0));</span>
+<span class="fc" id="L27">        list.add(new CropDetail(&quot;Mustard&quot;, &quot;bi-flower2&quot;, &quot;https://images.unsplash.com/photo-1490759847864-5c6d7de0b733?w=400&quot;, &quot;Nitrogen&quot;, &quot;White rust&quot;, &quot;400-600 mm&quot;, &quot;110-130 Days&quot;, 10, 25, 40, 65, 40, 6.0, 7.5));</span>
+<span class="fc" id="L28">        list.add(new CropDetail(&quot;Groundnut&quot;, &quot;bi-nut&quot;, &quot;https://images.unsplash.com/photo-1601493700631-2b16ec8b4714?w=400&quot;, &quot;Gypsum&quot;, &quot;Leaf spot&quot;, &quot;500-700 mm&quot;, &quot;120-140 Days&quot;, 25, 35, 50, 70, 50, 6.0, 7.0));</span>
+<span class="fc" id="L29">        list.add(new CropDetail(&quot;Sunflower&quot;, &quot;bi-brightness-high&quot;, &quot;https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=400&quot;, &quot;NPK&quot;, &quot;Head rot&quot;, &quot;500-700 mm&quot;, &quot;90-110 Days&quot;, 20, 30, 45, 65, 50, 6.0, 7.5));</span>
+<span class="fc" id="L30">        list.add(new CropDetail(&quot;Banana&quot;, &quot;bi-moon&quot;, &quot;https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=400&quot;, &quot;Potash&quot;, &quot;Panama disease&quot;, &quot;1200-2200 mm&quot;, &quot;9-12 Months&quot;, 25, 35, 70, 85, 120, 6.0, 7.5));</span>
+<span class="fc" id="L31">        list.add(new CropDetail(&quot;Mango&quot;, &quot;bi-tree-fill&quot;, &quot;https://images.unsplash.com/photo-1553279778-0225cd92bb95?w=400&quot;, &quot;NPK&quot;, &quot;Anthracnose&quot;, &quot;750-2500 mm&quot;, &quot;3-5 Years&quot;, 24, 35, 50, 80, 75, 5.5, 7.5));</span>
+<span class="fc" id="L32">        list.add(new CropDetail(&quot;Lentil&quot;, &quot;bi-circle-square&quot;, &quot;https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400&quot;, &quot;Phosphorus&quot;, &quot;Wilt control&quot;, &quot;350-500 mm&quot;, &quot;110-130 Days&quot;, 15, 25, 40, 60, 30, 6.0, 7.5));</span>
+<span class="fc" id="L33">        list.add(new CropDetail(&quot;Chickpea&quot;, &quot;bi-heart&quot;, &quot;https://images.unsplash.com/photo-1516684669130-eeeec3ee3a0e?w=400&quot;, &quot;Phosphorus&quot;, &quot;Blight control&quot;, &quot;400-600 mm&quot;, &quot;100-120 Days&quot;, 15, 28, 40, 65, 40, 6.0, 7.5));</span>
+<span class="fc" id="L34">        list.add(new CropDetail(&quot;Sesame&quot;, &quot;bi-stars&quot;, &quot;https://images.unsplash.com/photo-1601493700631-2b16ec8b4714?w=400&quot;, &quot;Nitrogen&quot;, &quot;Leaf spot&quot;, &quot;400-600 mm&quot;, &quot;90-110 Days&quot;, 25, 35, 45, 65, 40, 5.5, 8.0));</span>
+<span class="fc" id="L35">        return Collections.unmodifiableList(list);</span>
+    }
+
+<span class="fc" id="L38">    public List&lt;CropDetail&gt; getAllCrops() { return CROPS; }</span>
+<span class="fc" id="L39">    public int getCropCount() { return CROPS.size(); }</span>
+    public CropDetail getCropByName(String name) {
+<span class="fc bfc" id="L41" title="All 2 branches covered.">        if (name == null) return null;</span>
+<span class="fc bfc" id="L42" title="All 4 branches covered.">        for (CropDetail c : CROPS) if (c.getName().equalsIgnoreCase(name.trim())) return c;</span>
+<span class="fc" id="L43">        return null;</span>
+    }
+<span class="fc bfc" id="L45" title="All 2 branches covered.">    public boolean hasCrop(String name) { return getCropByName(name) != null; }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

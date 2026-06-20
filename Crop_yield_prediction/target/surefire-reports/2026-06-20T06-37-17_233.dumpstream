@@ -1,0 +1,5 @@
+# Created at 2026-06-20T06:37:17.645
+Boot Manifest-JAR contains absolute paths in classpath 'D:\crop-recommendation-system-SCD\Crop_yield_prediction\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

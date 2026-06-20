@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0"
+         metadata-complete="true">
+
+    <display-name>Crop Yield Prediction</display-name>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+    <servlet>
+        <servlet-name>FarmerLoginServlet</servlet-name>
+        <servlet-class>controller.farmer.FarmerLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FarmerLoginServlet</servlet-name>
+        <url-pattern>/FarmerLoginServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FarmerRegisterServlet</servlet-name>
+        <servlet-class>controller.farmer.FarmerRegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FarmerRegisterServlet</servlet-name>
+        <url-pattern>/FarmerRegisterServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SellCropServlet</servlet-name>
+        <servlet-class>controller.farmer.SellCropServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SellCropServlet</servlet-name>
+        <url-pattern>/SellCropServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>OrderStatusServlet</servlet-name>
+        <servlet-class>controller.farmer.OrderStatusServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderStatusServlet</servlet-name>
+        <url-pattern>/OrderStatusServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BuyerChatServlet</servlet-name>
+        <servlet-class>controller.farmer.BuyerChatServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BuyerChatServlet</servlet-name>
+        <url-pattern>/BuyerChatServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>WeatherServlet</servlet-name>
+        <servlet-class>controller.farmer.WeatherServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>WeatherServlet</servlet-name>
+        <url-pattern>/WeatherServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BuyerLoginServlet</servlet-name>
+        <servlet-class>controller.buyer.BuyerLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BuyerLoginServlet</servlet-name>
+        <url-pattern>/BuyerLoginServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BuyerRegisterServlet</servlet-name>
+        <servlet-class>controller.buyer.BuyerRegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BuyerRegisterServlet</servlet-name>
+        <url-pattern>/BuyerRegisterServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BuyCropServlet</servlet-name>
+        <servlet-class>controller.buyer.BuyCropServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BuyCropServlet</servlet-name>
+        <url-pattern>/BuyCropServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ConfirmReceiveServlet</servlet-name>
+        <servlet-class>controller.buyer.ConfirmReceiveServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ConfirmReceiveServlet</servlet-name>
+        <url-pattern>/ConfirmReceiveServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CommunicationServlet</servlet-name>
+        <servlet-class>controller.buyer.CommunicationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CommunicationServlet</servlet-name>
+        <url-pattern>/CommunicationServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminLoginServlet</servlet-name>
+        <servlet-class>controller.admin.AdminLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminLoginServlet</servlet-name>
+        <url-pattern>/AdminLoginServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CropManagementServlet</servlet-name>
+        <servlet-class>controller.admin.CropManagementServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CropManagementServlet</servlet-name>
+        <url-pattern>/CropManagementServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ApproveRequestServlet</servlet-name>
+        <servlet-class>controller.admin.ApproveRequestServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ApproveRequestServlet</servlet-name>
+        <url-pattern>/ApproveRequestServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RateFarmerServlet</servlet-name>
+        <servlet-class>controller.admin.RateFarmerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RateFarmerServlet</servlet-name>
+        <url-pattern>/RateFarmerServlet</url-pattern>
+    </servlet-mapping>
+
+</web-app>

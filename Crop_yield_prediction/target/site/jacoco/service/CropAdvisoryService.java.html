@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CropAdvisoryService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Crop_yield_prediction</a> &gt; <a href="index.source.html" class="el_package">service</a> &gt; <span class="el_source">CropAdvisoryService.java</span></div><h1>CropAdvisoryService.java</h1><pre class="source lang-java linenums">package service;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import model.CropDetail;
+import model.CropRecommendation;
+
+<span class="fc" id="L9">public class CropAdvisoryService {</span>
+<span class="fc" id="L10">    private final CropInfoService cropInfoService = new CropInfoService();</span>
+
+    public CropRecommendation recommend(double temperature, double humidity, double rainfall, double ph) {
+<span class="fc" id="L13">        CropDetail best = null;</span>
+<span class="fc" id="L14">        int bestScore = -1;</span>
+<span class="fc bfc" id="L15" title="All 2 branches covered.">        for (CropDetail crop : cropInfoService.getAllCrops()) {</span>
+<span class="fc" id="L16">            int score = calculateScore(crop, temperature, humidity, rainfall, ph);</span>
+<span class="fc bfc" id="L17" title="All 2 branches covered.">            if (score &gt; bestScore) { bestScore = score; best = crop; }</span>
+<span class="fc" id="L18">        }</span>
+<span class="fc" id="L19">        String reason = best.getName() + &quot; matches temperature &quot; + temperature + &quot;C, humidity &quot; + humidity</span>
+                + &quot;%, rainfall &quot; + rainfall + &quot;mm, pH &quot; + ph + &quot;.&quot;;
+<span class="fc" id="L21">        return new CropRecommendation(best.getName(), reason, bestScore);</span>
+    }
+
+    public List&lt;CropRecommendation&gt; recommendTop(double temperature, double humidity, double rainfall, double ph, int limit) {
+<span class="fc" id="L25">        List&lt;CropRecommendation&gt; list = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        for (CropDetail crop : cropInfoService.getAllCrops()) {</span>
+<span class="fc" id="L27">            int score = calculateScore(crop, temperature, humidity, rainfall, ph);</span>
+<span class="fc" id="L28">            list.add(new CropRecommendation(crop.getName(), crop.getName() + &quot; score &quot; + score, score));</span>
+<span class="fc" id="L29">        }</span>
+<span class="fc" id="L30">        list.sort(Comparator.comparingInt(CropRecommendation::getMatchScore).reversed());</span>
+<span class="fc" id="L31">        return list.subList(0, Math.min(limit, list.size()));</span>
+    }
+
+    public int calculateScore(CropDetail crop, double temp, double humidity, double rainfall, double ph) {
+<span class="fc" id="L35">        int score = 0;</span>
+<span class="fc bfc" id="L36" title="All 4 branches covered.">        if (temp &gt;= crop.getIdealTempMin() &amp;&amp; temp &lt;= crop.getIdealTempMax()) score += 30;</span>
+<span class="fc bfc" id="L37" title="All 4 branches covered.">        if (humidity &gt;= crop.getIdealHumidityMin() &amp;&amp; humidity &lt;= crop.getIdealHumidityMax()) score += 25;</span>
+<span class="fc bfc" id="L38" title="All 2 branches covered.">        if (rainfall &gt;= crop.getIdealRainfallMin()) score += 25;</span>
+<span class="pc bpc" id="L39" title="2 of 4 branches missed.">        if (ph &gt;= crop.getIdealPhMin() &amp;&amp; ph &lt;= crop.getIdealPhMax()) score += 20;</span>
+<span class="fc" id="L40">        return score;</span>
+    }
+
+    public boolean isValidInput(double temperature, double humidity, double rainfall, double ph) {
+<span class="pc bpc" id="L44" title="7 of 16 branches missed.">        return temperature &gt;= -10 &amp;&amp; temperature &lt;= 55 &amp;&amp; humidity &gt;= 0 &amp;&amp; humidity &lt;= 100</span>
+                &amp;&amp; rainfall &gt;= 0 &amp;&amp; rainfall &lt;= 5000 &amp;&amp; ph &gt;= 0 &amp;&amp; ph &lt;= 14;
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

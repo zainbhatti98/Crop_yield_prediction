@@ -1,0 +1,12 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Crop_yield_prediction,service,OrderStatusService,2,150,3,33,1,23,3,24,0,7
+Crop_yield_prediction,service,AuthService,2,33,2,8,0,6,2,8,0,5
+Crop_yield_prediction,service,FarmerService,0,45,2,8,0,7,2,8,0,5
+Crop_yield_prediction,service,CropInfoService,0,451,0,8,0,30,0,11,0,7
+Crop_yield_prediction,service,CropAdvisoryService,0,186,9,27,0,24,9,14,0,5
+Crop_yield_prediction,service,ValidationUtil,2,116,12,32,0,11,12,21,0,11
+Crop_yield_prediction,service,CropService,0,49,3,11,0,6,3,10,0,6
+Crop_yield_prediction,service,SaleRequestService,3,45,3,7,1,9,3,9,0,6
+Crop_yield_prediction,model,CropRecommendation,0,21,0,0,0,6,0,4,0,4
+Crop_yield_prediction,model,CropDetail,0,87,0,0,0,22,0,15,0,15
+Crop_yield_prediction,db,DBConnection,26,4,0,0,11,1,2,1,2,1

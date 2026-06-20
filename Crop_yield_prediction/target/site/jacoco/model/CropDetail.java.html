@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CropDetail.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Crop_yield_prediction</a> &gt; <a href="index.source.html" class="el_package">model</a> &gt; <span class="el_source">CropDetail.java</span></div><h1>CropDetail.java</h1><pre class="source lang-java linenums">package model;
+
+public class CropDetail {
+    private final String name, icon, imageUrl, fertilizers, diseaseControl, waterRequirement, harvestTime;
+    private final double idealTempMin, idealTempMax, idealHumidityMin, idealHumidityMax, idealRainfallMin, idealPhMin, idealPhMax;
+
+    public CropDetail(String name, String icon, String imageUrl, String fertilizers, String diseaseControl,
+            String waterRequirement, String harvestTime, double idealTempMin, double idealTempMax,
+<span class="fc" id="L9">            double idealHumidityMin, double idealHumidityMax, double idealRainfallMin, double idealPhMin, double idealPhMax) {</span>
+<span class="fc" id="L10">        this.name = name; this.icon = icon; this.imageUrl = imageUrl;</span>
+<span class="fc" id="L11">        this.fertilizers = fertilizers; this.diseaseControl = diseaseControl;</span>
+<span class="fc" id="L12">        this.waterRequirement = waterRequirement; this.harvestTime = harvestTime;</span>
+<span class="fc" id="L13">        this.idealTempMin = idealTempMin; this.idealTempMax = idealTempMax;</span>
+<span class="fc" id="L14">        this.idealHumidityMin = idealHumidityMin; this.idealHumidityMax = idealHumidityMax;</span>
+<span class="fc" id="L15">        this.idealRainfallMin = idealRainfallMin; this.idealPhMin = idealPhMin; this.idealPhMax = idealPhMax;</span>
+<span class="fc" id="L16">    }</span>
+<span class="fc" id="L17">    public String getName() { return name; }</span>
+<span class="fc" id="L18">    public String getIcon() { return icon; }</span>
+<span class="fc" id="L19">    public String getImageUrl() { return imageUrl; }</span>
+<span class="fc" id="L20">    public String getFertilizers() { return fertilizers; }</span>
+<span class="fc" id="L21">    public String getDiseaseControl() { return diseaseControl; }</span>
+<span class="fc" id="L22">    public String getWaterRequirement() { return waterRequirement; }</span>
+<span class="fc" id="L23">    public String getHarvestTime() { return harvestTime; }</span>
+<span class="fc" id="L24">    public double getIdealTempMin() { return idealTempMin; }</span>
+<span class="fc" id="L25">    public double getIdealTempMax() { return idealTempMax; }</span>
+<span class="fc" id="L26">    public double getIdealHumidityMin() { return idealHumidityMin; }</span>
+<span class="fc" id="L27">    public double getIdealHumidityMax() { return idealHumidityMax; }</span>
+<span class="fc" id="L28">    public double getIdealRainfallMin() { return idealRainfallMin; }</span>
+<span class="fc" id="L29">    public double getIdealPhMin() { return idealPhMin; }</span>
+<span class="fc" id="L30">    public double getIdealPhMax() { return idealPhMax; }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>
