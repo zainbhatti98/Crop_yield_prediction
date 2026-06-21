@@ -14,4 +14,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build Docker Image
-        run: docker build -t crop-system .
+        run: docker build -t Crop_yield_prediction .
