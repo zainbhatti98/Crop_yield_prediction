@@ -1,17 +1,16 @@
-name: Build Project
+name: CI Docker Build
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Build Docker Image
+      - name: Build Docker image
         run: docker build -t Crop_yield_prediction .
