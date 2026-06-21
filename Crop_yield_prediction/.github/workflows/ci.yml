@@ -1,4 +1,4 @@
-name: CI Docker Build
+name: CI Build Docker
 
 on:
   push:
@@ -13,4 +13,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build Docker image
-        run: docker build -t Crop_yield_prediction .
+        run: docker build -t crop-yield-app .
