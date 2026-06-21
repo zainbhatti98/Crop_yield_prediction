@@ -144,6 +144,25 @@ try {
             font-weight:bold;
         }
 
+    .logout-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 30px;
+    border-radius: 30px;
+    background: red;
+    color: white;
+    font-weight: bold;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.logout-btn:hover {
+    background: darkred;
+    color: white;
+}
     </style>
 </head>
 
@@ -255,6 +274,10 @@ try {
         <i class="fas fa-arrow-left"></i> Back
     </button>
 </div>
+                <a href="<%= request.getContextPath() %>/index.jsp"
+   class="logout-btn text-decoration-none">
+    🚪 Logout
+</a>
 
 </body>
 </html>

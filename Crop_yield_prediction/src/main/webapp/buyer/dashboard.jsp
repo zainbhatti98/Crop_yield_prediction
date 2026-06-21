@@ -121,6 +121,25 @@ try {
             background: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200') center/cover;
         }
 
+    .logout-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 30px;
+    border-radius: 30px;
+    background: red;
+    color: white;
+    font-weight: bold;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.logout-btn:hover {
+    background: darkred;
+    color: white;
+}
     </style>
 </head>
 
@@ -175,6 +194,10 @@ try {
 
     </div>
 </div>
+                <a href="<%= request.getContextPath() %>/index.jsp"
+   class="logout-btn text-decoration-none">
+    🚪 Logout
+</a>
 
 </body>
 </html>

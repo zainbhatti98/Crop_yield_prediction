@@ -94,6 +94,25 @@
             background: darkred;
         }
 
+    .logout-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 30px;
+    border-radius: 30px;
+    background: red;
+    color: white;
+    font-weight: bold;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.logout-btn:hover {
+    background: darkred;
+    color: white;
+}
     </style>
 </head>
 
@@ -138,9 +157,11 @@
 </div>
 
 <!-- LOGOUT -->
-<form action="logoutServlet" method="post">
-    <button class="logout-btn">🚪 Logout</button>
-</form>
+<!-- LOGOUT -->
+<a href="<%= request.getContextPath() %>/index.jsp"
+   class="logout-btn text-decoration-none">
+    🚪 Logout
+</a>
 
 </body>
 </html>
